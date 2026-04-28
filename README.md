@@ -25,8 +25,23 @@ Executar a partir da raiz do projeto:
 bash scripts/sync-claude-skills.sh
 ```
 
+## Download e execucao direta
+
+Se quiser baixar e executar sem clonar este repositório antes, rode na raiz do projeto de destino:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/juanpvh/script-ratos/main/sync-claude-skills.sh -o /tmp/sync-claude-skills.sh && chmod +x /tmp/sync-claude-skills.sh && SKILLS_PROJECT_ROOT="$PWD" /tmp/sync-claude-skills.sh
+```
+
+Esse comando:
+
+1. baixa o script para `/tmp`
+2. executa usando o diretório atual como raiz do projeto
+3. cria ou atualiza `temp/` e `.agents/skills/` no projeto atual
+
 ## Variaveis opcionais
 
+- `SKILLS_PROJECT_ROOT`: redefine a raiz do projeto onde `temp/` e `.agents/skills/` serao criados
 - `SKILLS_TEMP_ROOT`: redefine a pasta base temporaria
 - `SKILLS_CLONE_ROOT`: redefine a pasta onde os repositórios sao clonados
 
