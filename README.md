@@ -22,8 +22,23 @@ O fluxo do script e:
 Executar a partir da raiz do projeto:
 
 ```bash
-bash scripts/sync-claude-skills.sh
+bash ./sync-claude-skills.sh
 ```
+
+Para publicar o estado atual do projeto no GitHub, rode:
+
+```bash
+bash ./publish-project.sh
+```
+
+Esse script:
+
+1. inicializa o Git local se necessario
+2. configura o `origin` para `https://github.com/juanpvh/move-skills-claude-codex`
+3. detecta automaticamente `main` ou `master`
+4. adiciona os arquivos respeitando o `.gitignore`
+5. cria um commit automatico com data/hora quando houver mudancas
+6. faz `push` para o GitHub
 
 ## Download e execucao direta
 

@@ -1,0 +1,7 @@
+.env
+.env.local
+config.json
+triagens/
+*.log
+.DS_Store
+__pycache__/

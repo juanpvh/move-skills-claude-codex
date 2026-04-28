@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Shell/environment
+.env
+.env.*
+
+.codex
+docs
+tests
+publish-project.sh
+test-publish-project.sh

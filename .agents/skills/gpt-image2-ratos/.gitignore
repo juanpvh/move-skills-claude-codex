@@ -1,0 +1,6 @@
+.setup-done
+__pycache__/
+*.pyc
+.DS_Store
+proxy.log
+sse.raw
