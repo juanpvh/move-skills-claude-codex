@@ -52,7 +52,7 @@ O fluxo do `sync-claude-skills.sh` e:
 1. clonar ou atualizar os repositorios em `temp/`
 2. publicar uma copia transformada de cada skill em `.agents/skills/<nome>`
 3. trocar referencias de `.claude` para `.agents`
-4. no caso de `ads-ratos`, mover `.claude/commands/*` para `references/` e remover `.claude`
+4. no caso de `ads-ratos`, mover o diretório `.claude/commands/` completo para `.agents/skills/ads-ratos/commands/`; como o plugin copia essa skill publicada, o conteúdo também aparece em `plugins/ads-ratos/skills/ads-ratos/commands/`
 5. montar plugins locais por segmento em `plugins/`
 6. gerar ou atualizar `.agents/plugins/marketplace.json` com o catalogo local desses plugins
 
@@ -61,6 +61,8 @@ O script aceita `--mode skills|plugins|both`.
 - `skills`: atualiza apenas `.agents/skills/`
 - `plugins`: atualiza apenas `plugins/` e `.agents/plugins/marketplace.json`
 - `both`: atualiza os dois
+
+Sem `SKILLS_PROJECT_ROOT`, o destino padrao e a propria raiz deste repositorio, onde o `sync-claude-skills.sh` esta localizado.
 
 ## Download e execucao direta do sync
 

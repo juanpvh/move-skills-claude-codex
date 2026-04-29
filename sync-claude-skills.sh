@@ -3,7 +3,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DEFAULT_PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+DEFAULT_PROJECT_ROOT="$SCRIPT_DIR"
 PROJECT_ROOT="${SKILLS_PROJECT_ROOT:-$DEFAULT_PROJECT_ROOT}"
 SYNC_MODE="${SKILLS_SYNC_MODE:-both}"
 
@@ -416,23 +416,19 @@ write_marketplace_json() {
 EOF
 }
 
-move_ads_commands_into_references() {
+move_ads_commands_into_skill() {
   local target_dir="$1"
-  local commands_dir references_dir command_file
+  local claude_dir commands_dir skill_commands_dir
 
-  commands_dir="$target_dir/.claude/commands"
-  references_dir="$target_dir/references"
+  claude_dir="$target_dir/.claude"
+  commands_dir="$claude_dir/commands"
+  skill_commands_dir="$target_dir/commands"
 
   [[ -d "$commands_dir" ]] || return
 
-  mkdir -p "$references_dir"
-
-  for command_file in "$commands_dir"/*; do
-    [[ -e "$command_file" ]] || continue
-    mv "$command_file" "$references_dir/"
-  done
-
-  rm -rf "$target_dir/.claude"
+  rm -rf "$skill_commands_dir"
+  mv "$commands_dir" "$skill_commands_dir"
+  rm -rf "$claude_dir"
 }
 
 publish_repo() {
@@ -452,7 +448,7 @@ publish_repo() {
   fi
 
   if [[ "$repo_name" == "ads-ratos" ]]; then
-    move_ads_commands_into_references "$target_dir"
+    move_ads_commands_into_skill "$target_dir"
   fi
 
   while IFS= read -r -d '' file; do
@@ -566,6 +562,7 @@ main() {
   rm -rf "$PUBLISHED_SKILLS_DIR"
   mkdir -p "$PUBLISHED_SKILLS_DIR"
   log "sincronizando repositorios em $CLONE_ROOT no modo $SYNC_MODE"
+  log "project_root=$PROJECT_ROOT"
 
   for repo_url in "${REPOS[@]}"; do
     sync_repo "$repo_url"
