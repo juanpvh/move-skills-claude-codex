@@ -2,7 +2,7 @@
 
 Este repositorio tem dois fluxos diferentes:
 
-1. `install.sh`: instala rapidamente a pasta `.agents` no projeto atual.
+1. `install.sh`: instala rapidamente `skills`, `plugins` ou ambos no projeto atual.
 2. `sync-claude-skills.sh`: sincroniza skills a partir de uma lista fixa de repositorios GitHub.
 
 ## Requisitos
@@ -11,7 +11,7 @@ Este repositorio tem dois fluxos diferentes:
 - Git
 - Para `sync-claude-skills.sh`: `tar`, `grep` e `sed`
 
-## Instalacao rapida de `.agents`
+## Instalacao rapida
 
 Rode a partir da raiz do projeto que vai receber as skills:
 

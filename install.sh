@@ -32,7 +32,7 @@ usage() {
 Uso: bash ./install.sh [--mode skills|plugins|both]
 
 Modos:
-  skills   instala apenas .agents com as skills
+  skills   instala apenas .agents/skills
   plugins  instala apenas plugins/ e .agents/plugins/marketplace.json
   both     instala skills e plugins
 
@@ -113,7 +113,7 @@ install_plugins() {
 
 cleanup() {
   if [[ -d "$CLONE_DIR" ]]; then
-    rm -rf "$CLONE_DIR"
+    rm -rf -- "$CLONE_DIR"
   fi
 }
 
