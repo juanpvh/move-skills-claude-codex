@@ -112,8 +112,9 @@ install_plugins() {
 }
 
 cleanup() {
-  if [[ -d "$CLONE_DIR" ]]; then
+  if [[ -e "$CLONE_DIR" ]]; then
     rm -rf -- "$CLONE_DIR"
+    [[ ! -e "$CLONE_DIR" ]] || return 1
   fi
 }
 
@@ -140,6 +141,9 @@ main() {
     install_plugins
   fi
 
+  trap - EXIT
+  cleanup || fail "falha ao remover diretorio temporario em $CLONE_DIR"
+  log "diretorio temporario removido"
   log "instalacao concluida"
 }
 
