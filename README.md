@@ -11,6 +11,8 @@ Este repositorio tem dois fluxos diferentes:
 - Git
 - Para `sync-claude-skills.sh`: `tar`, `grep` e `sed`
 
+No Windows 11, rode os scripts via Git Bash. O `install.sh` aceita caminhos no formato `C:\...` nas variaveis `INSTALL_*` e converte esses valores automaticamente quando necessario.
+
 ## Instalacao rapida
 
 Rode a partir da raiz do projeto que vai receber as skills:
@@ -27,7 +29,7 @@ O `install.sh` faz este fluxo:
 
 1. clona `https://github.com/juanpvh/move-skills-claude-codex`
 2. move `skills`, `plugins` ou ambos conforme o modo escolhido
-3. remove a pasta temporaria `move-skills-claude-codex`
+3. remove o clone temporario criado em `TMPDIR` (ou `/tmp` por padrao)
 
 O script aceita `--mode skills|plugins|both`.
 - default atual: `skills`
