@@ -113,7 +113,10 @@ install_plugins() {
 
 cleanup() {
   if [[ -e "$CLONE_DIR" ]]; then
-    rm -rf -- "$CLONE_DIR"
+    rm -rf -- "$CLONE_DIR" 2>/dev/null || true
+    if [[ -e "$CLONE_DIR" ]] && command -v powershell.exe >/dev/null 2>&1; then
+      powershell.exe -NoProfile -Command "Remove-Item -LiteralPath '$CLONE_DIR' -Recurse -Force" >/dev/null 2>&1 || true
+    fi
     [[ ! -e "$CLONE_DIR" ]] || return 1
   fi
 }
