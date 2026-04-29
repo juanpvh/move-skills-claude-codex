@@ -1,0 +1,39 @@
+{
+  "name": "copy-ratos",
+  "version": "0.1.0",
+  "description": "Suite local de skills para copy de branding e resposta direta.",
+  "author": {
+    "name": "RATOS IA",
+    "url": "https://github.com/juanpvh/move-skills-claude-codex"
+  },
+  "homepage": "https://github.com/juanpvh/move-skills-claude-codex",
+  "repository": "https://github.com/juanpvh/move-skills-claude-codex",
+  "keywords": [
+    "copy",
+    "branding",
+    "vendas",
+    "ogilvy",
+    "schwartz"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Copy Ratos",
+    "shortDescription": "Copy para branding e performance",
+    "longDescription": "Empacota as skills ogilvy-copy e schwartz-copy em um unico plugin local.",
+    "developerName": "RATOS IA",
+    "category": "Writing",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/juanpvh/move-skills-claude-codex",
+    "defaultPrompt": [
+      "Escreve uma landing page de alta conversao.",
+      "Cria um manifesto de marca no estilo Ogilvy.",
+      "Gera headlines para campanha de resposta direta."
+    ],
+    "brandColor": "#16A34A",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

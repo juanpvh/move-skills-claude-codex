@@ -1,0 +1,68 @@
+{
+  "name": "ratos-ia",
+  "interface": {
+    "displayName": "RATOS IA"
+  },
+  "plugins": [
+    {
+      "name": "ads-ratos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ads-ratos"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Marketing"
+    },
+    {
+      "name": "imagem-ratos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/imagem-ratos"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    },
+    {
+      "name": "copy-ratos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/copy-ratos"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Writing"
+    },
+    {
+      "name": "social-ratos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/social-ratos"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Marketing"
+    },
+    {
+      "name": "youtube-ratos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/youtube-ratos"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    }
+  ]
+}

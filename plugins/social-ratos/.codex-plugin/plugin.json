@@ -1,0 +1,39 @@
+{
+  "name": "social-ratos",
+  "version": "0.1.0",
+  "description": "Suite local de skills para criar e publicar conteudo em Instagram e TikTok.",
+  "author": {
+    "name": "RATOS IA",
+    "url": "https://github.com/juanpvh/move-skills-claude-codex"
+  },
+  "homepage": "https://github.com/juanpvh/move-skills-claude-codex",
+  "repository": "https://github.com/juanpvh/move-skills-claude-codex",
+  "keywords": [
+    "social",
+    "instagram",
+    "tiktok",
+    "carrossel",
+    "publicacao"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Social Ratos",
+    "shortDescription": "Criacao e publicacao social",
+    "longDescription": "Empacota as skills carrossel-ratos e publicar-social-ratos em um unico plugin local.",
+    "developerName": "RATOS IA",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/juanpvh/move-skills-claude-codex",
+    "defaultPrompt": [
+      "Faz um carrossel para Instagram sobre este tema.",
+      "Publica este criativo no Instagram e TikTok.",
+      "Transforma este roteiro em slides prontos."
+    ],
+    "brandColor": "#DB2777",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

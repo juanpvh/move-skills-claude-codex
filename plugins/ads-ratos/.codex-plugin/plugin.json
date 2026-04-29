@@ -1,0 +1,39 @@
+{
+  "name": "ads-ratos",
+  "version": "0.1.0",
+  "description": "Suite local de skills para diagnostico, auditoria e operacao de Meta Ads, Google Ads e GA4.",
+  "author": {
+    "name": "RATOS IA",
+    "url": "https://github.com/juanpvh/move-skills-claude-codex"
+  },
+  "homepage": "https://github.com/juanpvh/move-skills-claude-codex",
+  "repository": "https://github.com/juanpvh/move-skills-claude-codex",
+  "keywords": [
+    "ads",
+    "meta-ads",
+    "google-ads",
+    "ga4",
+    "trafego-pago"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Ads Ratos",
+    "shortDescription": "Diagnostico, auditoria e operacao de ads",
+    "longDescription": "Empacota as skills ads-ratos, meta-ads-ratos, google-ads-ratos e ga4-ratos em um unico plugin local.",
+    "developerName": "RATOS IA",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/juanpvh/move-skills-claude-codex",
+    "defaultPrompt": [
+      "Faz um diagnostico da conta de ads.",
+      "Gera um relatorio mensal com benchmarks BR.",
+      "Audita Meta Ads, Google Ads e GA4 do cliente."
+    ],
+    "brandColor": "#1F6FEB",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

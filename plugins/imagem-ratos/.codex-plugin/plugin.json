@@ -1,0 +1,39 @@
+{
+  "name": "imagem-ratos",
+  "version": "0.1.0",
+  "description": "Suite local de skills para geracao e edicao de imagens com diferentes provedores e estilos.",
+  "author": {
+    "name": "RATOS IA",
+    "url": "https://github.com/juanpvh/move-skills-claude-codex"
+  },
+  "homepage": "https://github.com/juanpvh/move-skills-claude-codex",
+  "repository": "https://github.com/juanpvh/move-skills-claude-codex",
+  "keywords": [
+    "imagem",
+    "gpt-image",
+    "gemini",
+    "criativos",
+    "design"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Imagem Ratos",
+    "shortDescription": "Geracao de imagem com varios motores",
+    "longDescription": "Empacota as skills gpt-image2-ratos, image-gen-ratos e nanobanana-ratos em um unico plugin local.",
+    "developerName": "RATOS IA",
+    "category": "Creativity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/juanpvh/move-skills-claude-codex",
+    "defaultPrompt": [
+      "Cria um criativo de imagem para campanha.",
+      "Gera uma variacao visual no estilo da marca.",
+      "Faz um mockup com texto e composicao."
+    ],
+    "brandColor": "#F97316",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

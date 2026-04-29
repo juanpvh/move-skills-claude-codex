@@ -1,0 +1,39 @@
+{
+  "name": "youtube-ratos",
+  "version": "0.1.0",
+  "description": "Suite local de skills para triagem de pautas e transcricao de videos e conteudo do YouTube.",
+  "author": {
+    "name": "RATOS IA",
+    "url": "https://github.com/juanpvh/move-skills-claude-codex"
+  },
+  "homepage": "https://github.com/juanpvh/move-skills-claude-codex",
+  "repository": "https://github.com/juanpvh/move-skills-claude-codex",
+  "keywords": [
+    "youtube",
+    "transcricao",
+    "transcript",
+    "triagem",
+    "conteudo"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "YouTube Ratos",
+    "shortDescription": "Triagem e transcricao de conteudo",
+    "longDescription": "Empacota as skills triagem-youtube-ratos, yt-transcript e transcribe em um unico plugin local.",
+    "developerName": "RATOS IA",
+    "category": "Research",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/juanpvh/move-skills-claude-codex",
+    "defaultPrompt": [
+      "Transcreve este video do YouTube.",
+      "Prioriza estas pautas para gravar no canal.",
+      "Extrai a legenda e resume os pontos centrais."
+    ],
+    "brandColor": "#DC2626",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}
