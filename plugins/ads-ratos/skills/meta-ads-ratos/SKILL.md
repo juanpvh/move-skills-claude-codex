@@ -203,6 +203,28 @@ O `swap-url-tags` resolve o problema de nao poder editar url_tags em criativos e
 
 O `--deep` no `duplicate-campaign` duplica tambem todos os ad sets e ads da campanha.
 
+### Datasets / Pixels (dataset.py)
+
+Operações sobre AdsPixel (signal diagnostics): listar, detalhes, criar, stats de eventos, share/unshare e diagnóstico de saúde.
+
+| Subcomando | O que faz | Exemplo |
+|---|---|---|
+| `list` | Lista pixels da conta | `dataset.py list --account act_123` |
+| `get` | Detalhes de um pixel | `dataset.py get --id 456` |
+| `create` | ⚠️ Cria pixel novo (1 por conta) | `dataset.py create --account act_123 --name "Pixel Site"` |
+| `stats` | Stats agregadas de eventos | `dataset.py stats --id 456 --aggregation event --start 2026-04-01 --end 2026-04-30` |
+| `events` | Resumo de eventos únicos no período | `dataset.py events --id 456 --start 2026-04-23` |
+| `share` | ⚠️ Compartilha pixel com outra conta | `dataset.py share --id 456 --account act_789` |
+| `unshare` | ⚠️ Remove compartilhamento | `dataset.py unshare --id 456 --account act_789` |
+| `shared-accounts` | Lista contas com acesso ao pixel | `dataset.py shared-accounts --id 456` |
+| `diagnostics` | Health check completo do pixel | `dataset.py diagnostics --id 456` |
+
+Aggregations suportadas em `stats`: `event`, `host`, `url`, `device_os`, `device_type`, `pixel_fire`, `browser_total_counts_unique_users`, `event_total_counts`.
+
+O `diagnostics` combina vários endpoints num resumo amigável: status do pixel, último fire, eventos dos últimos 7 dias, automatic matching, CAPI, e classifica saúde como `HEALTHY` / `DEGRADED` / `UNHEALTHY` listando os problemas encontrados.
+
+**Permissões:** o token precisa ter `ads_management` ou `ads_read` no scope, e a ad account precisa ter o pixel vinculado e estar com o app autorizado.
+
 ---
 
 ## Aprendizados (memória persistente)

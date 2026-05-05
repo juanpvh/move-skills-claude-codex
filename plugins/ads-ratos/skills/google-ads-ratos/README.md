@@ -5,10 +5,33 @@ Skill de execucao para Google Ads no ecossistema Ratos. Usa o SDK oficial `googl
 ## Instalacao
 
 ```bash
-pip3 install google-ads protobuf
+pip3 install google-ads google-auth-oauthlib protobuf
 ```
 
 ## Configuracao
+
+### Opcao 1: Setup automatico (recomendado)
+
+```bash
+cd ~/.agents/skills/google-ads-ratos/scripts
+
+# Verifica o que falta
+python3 setup.py check
+
+# Preencha CLIENT_ID, CLIENT_SECRET e DEVELOPER_TOKEN no .env
+# Depois gere o refresh token automaticamente:
+python3 setup.py oauth
+
+# Teste a conexao:
+python3 setup.py test
+
+# Ou faca tudo de uma vez:
+python3 setup.py full
+```
+
+Tutorial completo de como obter as credenciais: ratosdeia.com.br/assets/tutorial-token-google-ads/
+
+### Opcao 2: Manual
 
 Crie o arquivo `~/.agents/skills/google-ads-ratos/.env` com:
 
@@ -31,6 +54,7 @@ Ou use o formato padrao `google-ads.yaml` na mesma pasta.
 | `create.py` | Criar campanhas, ad groups, keywords, RSAs, extensoes |
 | `update.py` | Editar status, orcamento, bids |
 | `delete.py` | Remover keywords, negativas, ads |
+| `keyword_planner.py` | Pesquisa de keywords (volume, CPC, competicao) via KeywordPlanIdeaService |
 
 ## Uso
 
@@ -48,6 +72,10 @@ python3 insights.py account --customer-id 1234567890 --date-range LAST_30_DAYS
 
 # Criar campanha (sempre PAUSED)
 python3 create.py campaign --customer-id 1234567890 --name "Search-Leads" --type SEARCH --budget 5000
+
+# Pesquisa de keywords (Keyword Planner)
+python3 keyword_planner.py ideas --keywords "marketing digital|automacao com ia" --limit 50
+python3 keyword_planner.py historical-metrics --keywords "claude code|cursor ai"
 ```
 
 ## Estrutura
@@ -62,10 +90,12 @@ google-ads-ratos/
 │   └── api-reference.md  # Referencia de GAQL queries uteis
 └── scripts/
     ├── lib/
-    │   └── __init__.py   # Auth, .env loader, helpers
-    ├── read.py           # Leitura
-    ├── insights.py       # Metricas e breakdowns
-    ├── create.py         # Criacao
-    ├── update.py         # Edicao
-    └── delete.py         # Exclusao
+    │   └── __init__.py     # Auth, .env loader, helpers
+    ├── setup.py            # Setup interativo (check, oauth, test)
+    ├── read.py             # Leitura
+    ├── insights.py         # Metricas e breakdowns
+    ├── create.py           # Criacao
+    ├── update.py           # Edicao
+    ├── delete.py           # Exclusao
+    └── keyword_planner.py  # Keyword Planner (descoberta + metricas historicas)
 ```
